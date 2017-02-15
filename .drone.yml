@@ -1,0 +1,5 @@
+pipeline:
+  build:
+    image: debian:jessie
+    commands:
+      - docker build -t bbq .
