@@ -9,18 +9,7 @@ WORKDIR bbqscreen_client
 RUN apt-get -y install qtmultimedia5-dev
 RUN qmake BBQScreenClient2.linux.pro
 RUN apt-get -y install make
-RUN apt-get -y install g++
-
-WORKDIR /
-ADD n2.4.1.zip n2.4.1.zip
-RUN apt-get -y install unzip
-RUN unzip n2.4.1.zip
-WORKDIR /FFmpeg-n2.4.1
-RUN apt-get -y install yasm
-RUN apt-get -y install pkg-config
-RUN ./configure --enable-shared
-RUN make
-RUN make install
+RUN apt-get -y install g++ ffmpeg
 
 WORKDIR /bbqscreen_client
 RUN apt-get -y install libz-dev
